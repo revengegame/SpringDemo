@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+ 		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="person" class="oraclejava.Person">
+		<property name="name" value="허재"/>
+		<property name="age" value="60" />
+	</bean>
+	
+	<!-- 사원1명 생성-->
+	<bean id="go" class="oraclejava.Employee">
+	<property name="name" value="허재"/>
+	<property name="address" ref="tokyoAddress"/>
+	</bean>
+	
+	<bean id="guro4Address" class="oraclejava.EmployeeAddress">
+	<property name="city" value="구로구"/>
+	<property name="street" value="디지털로4길"/>
+	</bean>
+	
+	<bean id="tokyoAddress" class="oraclejava.EmployeeAddress">
+	<property name="city" value="신주쿠구"/>
+	<property name="street" value="신주쿠 1번지"/>	
+	</bean>
+</beans>
